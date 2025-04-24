@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { Inter, Calistoga } from 'next/font/google'
 import "./globals.css";
 import { twMerge } from "tailwind-merge";
+import { Providers } from "@/components/Providers";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 const calistoga = Calistoga({ subsets: ["latin"], variable: "--font-serif", weight: "400" });
@@ -35,9 +36,10 @@ export default function RootLayout({
           calistoga.variable,
           geistSans.variable,
           geistMono.variable,
-          "bg-gray-900 text-white antialiased font-sans")}
+          "bg-gray-50 text-gray-900 antialiased font-sans"
+        )}
       >
-        {children}
+        <Providers>{children}</Providers>
       </body>
     </html>
   );
